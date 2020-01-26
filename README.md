@@ -12,10 +12,7 @@ Make sure to have installed:
 
 ## How to run
 
-- Start Minikube: `minikube start --vm-driver virtualbox`
-- Deploy the app: `kubectl apply -f deployment.yaml`
-- Create a Service: `kubectl expose deployment minikube-app-deployment --type=LoadBalancer --port=8080`
-- Make the Service accessible through: `minikube service minikube-app-deployment`
+- Run `make run_on_minikube`
 
 ## How to run without Minikube
 
