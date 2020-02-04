@@ -1,10 +1,14 @@
-all: build run
+all: run
 
 build:
 	docker build -t agassner/minikube-app:latest .
 
-run:
+run: build
 	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest
+
+test: build
+	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest py.test --cov=. --cov-report term-missing ./test
+	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest pylama
 
 run_on_minikube:
 	# Start Minikube
