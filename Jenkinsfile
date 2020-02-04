@@ -1,10 +1,14 @@
 pipeline {
     stages {
         stage('Test') {
-            sh "make test"
+            steps {
+                sh "make test"
+            }
         }
         stage('Build') {
-            sh "make build"
+            steps {
+                sh "make build"
+            }
         }
     }
 }
