@@ -1,14 +1,14 @@
 all: run
 
 build:
-	docker build -t agassner/minikube-app:latest .
+	docker build -t agassner/minikube-python-app:latest .
 
 run: build
-	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest
+	docker run --rm -it -p 8080:8080 agassner/minikube-python-app:latest
 
 test: build
-	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest py.test --cov=. --cov-report term-missing ./test
-	docker run --rm -it -p 8080:8080 agassner/minikube-app:latest pylama
+	docker run --rm -it -p 8080:8080 agassner/minikube-python-app:latest py.test --cov=. --cov-report term-missing ./test
+	docker run --rm -it -p 8080:8080 agassner/minikube-python-app:latest pylama
 
 run_on_minikube:
 	# Start Minikube
@@ -20,8 +20,8 @@ run_on_minikube:
 	sleep 15
 
 	# Create a Service
-	kubectl expose deployment minikube-app-deployment --type=LoadBalancer --port=8080
+	kubectl expose deployment minikube-python-app-deployment --type=LoadBalancer --port=8080
 	sleep 15
 
 	# Make the Service accessible
-	minikube service minikube-app-deployment
+	minikube service minikube-python-app-deployment

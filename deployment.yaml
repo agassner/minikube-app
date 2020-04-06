@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: minikube-app-deployment
+  name: minikube-python-app-deployment
   labels:
-    app: minikube-app
+    app: minikube-python-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: minikube-app
+      app: minikube-python-app
   template:
     metadata:
       labels:
-        app: minikube-app
+        app: minikube-python-app
     spec:
       containers:
-      - name: minikube-app
-        image: agassner/minikube-app:latest
+      - name: minikube-python-app
+        image: agassner/minikube-python-app:latest
         ports:
         - containerPort: 8080

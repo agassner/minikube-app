@@ -21,8 +21,8 @@ Make sure to have installed:
 
 ### Github
 
-https://github.com/agassner/minikube-app
+https://github.com/agassner/minikube-python-app
 
 ### Docker Hub
 
-https://hub.docker.com/r/agassner/minikube-app
+https://hub.docker.com/r/agassner/minikube-python-app
